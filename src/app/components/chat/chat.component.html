@@ -1,0 +1,27 @@
+<div class="chat">
+  <input  [(ngModel)]="name"
+          type="text"
+          class="chat-name"
+          name="user"
+          placeholder="Enter your name">
+  <div class="chat-content">
+    <div *ngIf="messages.length" class="chat-messages">
+      <div *ngFor="let item of messages" class="chat-message">
+        <b>{{item.name}} :</b> {{item.message}}
+      </div>      
+    </div>
+  </div>
+  <div *ngIf="activeUser" class="chat-feedback">
+    <em>{{activeUser}} is typing a message ...</em>
+  </div>    
+  <textarea [(ngModel)]="message"
+            (keypress)="typingMsg()"
+            name="message"
+            class="chat-textarea"
+            placeholder="Type your message"></textarea>  
+  <div>
+    <button (click)="sendMsg()">Send</button>
+  </div>
+</div>
+
+

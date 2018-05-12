@@ -1,0 +1,25 @@
+.chat{
+    max-width: 300px;
+    margin: 0 auto;
+}
+.chat-name,
+.chat-textarea,
+.chat-content{
+    box-sizing: border-box;
+    width: 100%;
+}
+.chat-textarea{
+    max-width: 100%;
+}
+.chat-content{ 
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #bbb;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.chat-feedback{
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
