@@ -1,46 +1,9 @@
-<div class="content">
-    <div class="content-row">
-            <div class="column rooms">
-                <h3>Rooms</h3>
-                <div *ngIf="isLogin" class="room-control">
-                    <input type="text"
-                           class="room-newitem"
-                           placeholder="Name"
-                           #newRoom>
-                    <button class="room-add" (click)="addRoom(newRoom.value)">add</button>
-                </div>
-                <ul class="rooms-list">
-                    <li *ngFor="let item of rooms; let number = index"
-                        (click)="selectRoom(number)">
-                        {{item.name}}
-                        <span class="btn-delete" (click)="deleteRoom(number)">x</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="column room">
-                <div class="todo">
-                    <h3>Todo list</h3>
-                    <div *ngIf="isLogin && todoList" class="todo-control">
-                        <input type="text"
-                               class="todo-newitem"
-                               placeholder="Name"
-                               #newTask>
-                        <button class="todo-add" (click)="addTask(newTask.value)">add</button>
-                    </div>
-                    <ul class="todo-list">
-                        <li *ngFor="let item of todoList let number = index">
-                            {{item}}
-                            <span class="btn-delete" (click)="deleteTask(number)">x</span>
-                        </li>
-                    </ul>
-                </div>                
-                <!-- <app-chat></app-chat> -->
-            </div>
-            <div class="column users">
-                <h3>Users</h3>
-                <ul *ngIf="users">
-                    <li *ngFor="let user of users.list">{{user}}</li>
-                </ul>
-            </div>
-    </div>    
-</div>
+<nav class="nav">
+    <ul class="nav-list">
+        <li><a routerLink="/">Home page</a> | </li>
+        <li *ngIf="!sharedData.isLogin"><a routerLink="/user/signin">Sign Up</a> | </li>
+        <li *ngIf="!sharedData.isLogin"><a routerLink="/user/signin">Sign In</a></li>       
+        <li *ngIf="sharedData.isLogin"><a routerLink="/user/logout">Log Out</a></li>        
+    </ul>
+</nav>
+<router-outlet></router-outlet>

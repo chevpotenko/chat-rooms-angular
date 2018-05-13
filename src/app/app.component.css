@@ -1,16 +1,22 @@
-.content-row{
-    display: flex;
-    flex-wrap: nowrap;
+.nav{
+    padding: 15px;
+    border-bottom: 1px solid #bbb; 
 }
-.content-row .column{
-    width: 33%;
+.nav-list{
+    margin: 0;
+    list-style: none;    
+    text-align: right;
 }
-.rooms-list li{
+.nav-list li{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.nav-list a{
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
-.btn-delete{
-    display: inline-block;
-    color: red;
-    border: 1px solid red; 
-    cursor: pointer;   
+.nav-list a:hover{    
+    text-decoration: underline;
 }

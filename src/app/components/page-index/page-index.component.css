@@ -1,0 +1,19 @@
+.content-row{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.content-row .column{
+    width: 33%;
+}
+.rooms-list li{
+    cursor: pointer;
+}
+.btn-delete{
+    display: none;
+    color: red;
+    border: 1px solid red; 
+    cursor: pointer;   
+}
+.is-login .btn-delete{
+    display: inline-block;
+}
