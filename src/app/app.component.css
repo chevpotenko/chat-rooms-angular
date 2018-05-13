@@ -5,3 +5,12 @@
 .content-row .column{
     width: 33%;
 }
+.rooms-list li{
+    cursor: pointer;
+}
+.btn-delete{
+    display: inline-block;
+    color: red;
+    border: 1px solid red; 
+    cursor: pointer;   
+}
