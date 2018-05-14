@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SharedService {
+
     public data = {
         isLogin: false
-    };
+    }
 
-    constructor() { }
+    constructor() {
 
-    setIsLogin(isLogin){
+    }
+
+    setIsLogin(isLogin) {
         this.data.isLogin = isLogin;
     }  
 
-    getIsLogin(){
+    getIsLogin() {
         return this.data.isLogin;
     }
 }

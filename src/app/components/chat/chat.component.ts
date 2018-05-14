@@ -16,7 +16,9 @@ export class ChatComponent implements OnInit {
     private connectionMessages;  
     private connectionTyping;  
 
-    constructor(private socket:SocketService) { }
+    constructor(private socket:SocketService) {
+
+    }
 
     ngOnInit() { 
         this.connectionMessages = this.socket.getMessages().subscribe(message => {

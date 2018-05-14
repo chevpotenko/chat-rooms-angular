@@ -2,9 +2,10 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
  
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
+
         const rooms = [
             { 
-                id: 1,
+                id: 0,
                 name: 'Books',
                 todo:[
                     'JavaScript: The Good Parts',
@@ -13,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 ]
             },
             { 
-                id: 2,
+                id: 1,
                 name: 'Code',
                 todo:[
                     'Js',
@@ -26,12 +27,12 @@ export class InMemoryDataService implements InMemoryDbService {
 
         const users = [
             {
-                id: 1,
+                id: 0,
                 email: 'test1@test.test',
                 password: '123'
             },
             {
-                id: 2,
+                id: 1,
                 email: 'test2@test.test',
                 password: '123'
             }
@@ -39,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService {
         ];
 
         const user = [{
-            id: 'islogin',
+            id: 'login',
             value: false
         }];
 

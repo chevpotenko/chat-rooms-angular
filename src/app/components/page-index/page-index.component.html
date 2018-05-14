@@ -11,24 +11,24 @@
         </div>
         <ul class="rooms-list">
             <li *ngFor="let item of rooms; let number = index"
-                (click)="selectRoom(number)">
+                (click)="selectRoom(item.id)">
                 {{item.name}}
-                <span class="btn-delete" (click)="deleteRoom(number)">x</span>
+                <span class="btn-delete" (click)="deleteRoom(item.id)">x</span>
             </li>
         </ul>
     </div>
     <div class="column room">
         <div class="todo">
             <h3>Todo list</h3>
-            <div *ngIf="sharedData.isLogin && todoList" class="todo-control">
+            <div *ngIf="sharedData.isLogin && currentRoom" class="todo-control">
                 <input type="text"
                         class="todo-newitem"
                         placeholder="Name"
                         #newTask>
                 <button class="todo-add" (click)="addTask(newTask.value)">add</button>
             </div>
-            <ul class="todo-list">
-                <li *ngFor="let item of todoList let number = index">
+            <ul *ngIf="currentRoom" class="todo-list">
+                <li *ngFor="let item of currentRoom.todo let number = index">
                     {{item}}
                     <span class="btn-delete" (click)="deleteTask(number)">x</span>
                 </li>

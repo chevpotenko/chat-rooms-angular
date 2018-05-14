@@ -14,12 +14,17 @@ export class SigninComponent implements OnInit {
 
 	constructor(private dataService: DataService,
 				private sharedService: SharedService,
-				private router: Router) { }
+				private router: Router) {
 
-	ngOnInit() {}
+	}
 
-	submit($event, id, email, password){
-        this.dataService.add('api/users/', {id, email, password}).subscribe(
+	ngOnInit() {
+		
+	}
+
+	submit(e, id, email, password) {
+		e.preventDefault();
+        this.dataService.add('api/users/', { email, password }).subscribe(
             (user) => {   
 				this.err = '';
 				this.router.navigate(['/']);

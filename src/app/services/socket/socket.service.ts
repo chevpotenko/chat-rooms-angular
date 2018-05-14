@@ -8,13 +8,15 @@ export class SocketService {
     private url : string = "http://localhost:3000";
     private socket: any;
 
-    constructor() {}
+    constructor() {
+        
+    }
 
-    sendMessage(message){
+    sendMessage(message) {
         this.socket.emit('chat', message);    
     }
 
-    sendActiveUser(user){
+    sendActiveUser(user) {
         this.socket.emit('typing', user);    
     }
   

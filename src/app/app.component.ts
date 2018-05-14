@@ -9,7 +9,7 @@ import { DataService } from './services/data/data.service';
 })
 export class AppComponent {
 
-    private sharedData
+    private sharedData;
 
     constructor(private sharedService: SharedService,
                 private dataService: DataService) {
@@ -17,7 +17,7 @@ export class AppComponent {
     }
     
     ngOnInit() {
-        this.dataService.getAll('api/user/islogin').subscribe((res) => {
+        this.dataService.getAll('api/user/login').subscribe((res) => {
             var data: any = res;
             console.log(data)
             this.sharedService.setIsLogin(data.value);
