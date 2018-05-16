@@ -9,11 +9,8 @@
     cursor: pointer;
 }
 .btn-delete{
-    display: none;
+    display: inline-block;
     color: red;
     border: 1px solid red; 
-    cursor: pointer;   
-}
-.is-login .btn-delete{
-    display: inline-block;
+    cursor: pointer; 
 }

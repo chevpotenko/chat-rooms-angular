@@ -1,5 +1,5 @@
 <div class="useraccount center">
-    <h2 class="section-title">Sign Up / Sign In</h2>
+    <h2 class="section-title">Sign In</h2>
     <div [class.errors]="err" class="useraccount-messages">{{err}}</div>
     <form calss="useraccount-form">
             <div class="useraccount-row">
@@ -11,7 +11,7 @@
                 <input type="password" id="password" name="password" #password>        
             </div>
             <div class="useraccount-row">
-                <button class="btn-submit" (click)="submit($event, email.value, password.value)">Sign</button>
+                <button class="btn-submit" (click)="signIn($event, email.value, password.value)">Sign In</button>
             </div>
     </form>
 </div>

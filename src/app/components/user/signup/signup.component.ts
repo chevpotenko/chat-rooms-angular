@@ -3,14 +3,15 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../services/data/data.service';
 import { SharedService } from '../../../services/shared/shared.service';
 
-@Component({
-	selector: 'app-signin',
-	templateUrl: './signin.component.html',
-	styleUrls: ['./signin.component.css']
-})
-export class SigninComponent implements OnInit {
 
-	public err:string = '';
+@Component({
+    selector: 'app-signup',
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.css']
+})
+export class SignupComponent implements OnInit {
+
+    public err:string = '';
 
 	constructor(private dataService: DataService,
 				private sharedService: SharedService,
@@ -22,9 +23,9 @@ export class SigninComponent implements OnInit {
 		
 	}
 
-	signIn(e, email, password) {
+	signUp(e, email, password) {
 		e.preventDefault();
-        this.dataService.add('api/users/signin', { email, password }).subscribe(
+        this.dataService.add('api/users/', { email, password }).subscribe(
             (user) => {   
 				this.err = '';
 				this.router.navigate(['/']);
@@ -36,7 +37,7 @@ export class SigninComponent implements OnInit {
 				}else{          
 					this.err = err.error.message;
 				}                
-			} 
+			}
 		);		   
 	}
 

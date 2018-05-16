@@ -46,26 +46,24 @@ export class PageIndexComponent implements OnInit {
     }
 
     addTask(task) {
-        var id = this.currentRoom.id;
+        this.currentRoom.todo.push(task);
+        var id = this.currentRoom.id;        
         var item = {
             name: this.currentRoom.name,
-            todo: this.currentRoom.todo.push(task)
-        }; 
-        this.dataService.update('api/rooms/', id, item).subscribe(data => {
-            //this.currentRoom.todo.push(task);
-        });    
+            todo: this.currentRoom.todo
+        };       
+        this.dataService.update('api/rooms/', id, item).subscribe();    
     }  
 
     deleteTask(index) {
+        this.currentRoom.todo.splice(index, 1);
         var id = this.currentRoom.id;
         var item = { 
             id: this.currentRoom.id,
             name: this.currentRoom.name,
-            todo: this.currentRoom.todo.splice(index, 1)
+            todo: this.currentRoom.todo
         };
-        this.dataService.update('api/rooms/', id, item).subscribe(data => {
-            //this.currentRoom.todo.splice(index, 1);
-        });    
+        this.dataService.update('api/rooms/', id, item).subscribe();    
     }
 
 }
