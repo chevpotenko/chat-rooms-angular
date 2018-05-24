@@ -29,7 +29,7 @@ import { SignupComponent } from './components/user/signup/signup.component';
         BrowserModule,
         FormsModule,
         AppRoutingModule,
-        HttpClientModule       
+        HttpClientModule      
         // HttpClientInMemoryWebApiModule.forRoot(
         //     InMemoryDataService, { dataEncapsulation: false }
         // )

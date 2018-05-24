@@ -5,7 +5,11 @@ import * as io from "socket.io-client";
 @Injectable()
 export class SocketService {
 
-    private url : string = "http://localhost:3000";
+    private url : string = "/";
+    private options : object  = {
+        secure: true,
+        rejectUnauthorized: false
+    };
     private socket: any;
 
     constructor() {
@@ -22,7 +26,7 @@ export class SocketService {
   
     getMessages() {
         let observable = new Observable(observer => {
-            this.socket = io(this.url);
+            this.socket = io(this.url, this.options);
             this.socket.on('chat', (data) => {
                 observer.next(data);    
             });       
@@ -32,9 +36,9 @@ export class SocketService {
 
     getActiveUser() {
         let observable = new Observable(observer => {
-            this.socket = io(this.url);
+            this.socket = io(this.url, this.options);
             this.socket.on('typing', (data) => {
-            observer.next(data);    
+                observer.next(data);    
             });       
         })     
         return observable;

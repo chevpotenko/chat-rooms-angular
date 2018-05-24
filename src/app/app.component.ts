@@ -19,7 +19,6 @@ export class AppComponent {
     ngOnInit() {
         this.dataService.getAll('api/user/signin').subscribe((res) => {
             var data: any = res;
-            console.log(data)
             this.sharedService.setIsLogin(data.value);
         }); 
     }
