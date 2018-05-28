@@ -1,16 +1,24 @@
 .content-row{
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 .content-row .column{
-    width: 33%;
+    width: 32%;
 }
-.rooms-list li{
+.rooms-item{
     cursor: pointer;
 }
-.btn-delete{
-    display: inline-block;
-    color: red;
-    border: 1px solid red; 
-    cursor: pointer; 
+.todo{
+    margin-bottom: 30px;
+}
+.todo-item,
+.rooms-item{
+    display: flex;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center;
+}
+.mat-toolbar{
+    margin-bottom: 15px;
 }

@@ -1,17 +1,22 @@
 <div class="useraccount center">
-  <h2 class="section-title">Sign Up</h2>
-  <div [class.errors]="err" class="useraccount-messages">{{err}}</div>
-  <form calss="useraccount-form">
-          <div class="useraccount-row">
-              <label for="email">E-mail:</label>
-              <input type="text" id="email" name="email" #email autocomplete="off">  
-          </div>
-          <div class="useraccount-row">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" #password>        
-          </div>
-          <div class="useraccount-row">
-              <button class="btn-submit" (click)="signUp($event, email.value, password.value)">Sign Up</button>
-          </div>
-  </form>
+    <h2 class="section-title">Sign Up</h2>
+    <div [class.errors]="err" class="useraccount-messages">{{err}}</div>
+    <form calss="useraccount-form">
+            <div class="useraccount-row">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" id="email" name="email" #email autocomplete="off" placeholder="Email">  
+                </mat-form-field>
+            </div>
+            <div class="useraccount-row">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" id="password" name="password" #password placeholder="Password"> 
+                </mat-form-field>       
+            </div>
+            <div class="useraccount-row">
+                <button mat-raised-button
+                        color="accent"
+                        class="btn-submit"
+                        (click)="signUp($event, email.value, password.value)">Sign Up</button>
+            </div>
+    </form>
 </div>

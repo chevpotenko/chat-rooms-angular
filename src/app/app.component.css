@@ -1,5 +1,6 @@
 .nav{
     padding: 15px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #bbb; 
 }
 .nav-list{
@@ -11,12 +12,5 @@
     margin: 0;
     padding: 0;
     display: inline-block;
-}
-.nav-list a{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-.nav-list a:hover{    
-    text-decoration: underline;
+    vertical-align: middle;
 }

@@ -1,10 +1,18 @@
 <div class="wrapper">
     <nav class="nav">
         <ul class="nav-list">
-            <li><a routerLink="/">Home page</a> | </li>
-            <li *ngIf="!sharedData.isLogin"><a routerLink="/user/signup">Sign Up</a> | </li>
-            <li *ngIf="!sharedData.isLogin"><a routerLink="/user/signin">Sign In</a></li>       
-            <li *ngIf="sharedData.isLogin"><a href="/user/logout">Log Out</a></li>        
+            <li>
+                <a mat-button color="primary" routerLink="/">Home page</a>
+            </li>
+            <li *ngIf="!sharedData.isLogin">
+                <a mat-button color="primary" routerLink="/user/signup">Sign Up</a>
+            </li>
+            <li *ngIf="!sharedData.isLogin">
+                <a mat-button color="primary" routerLink="/user/signin">Sign In</a>
+            </li>       
+            <li *ngIf="sharedData.isLogin">
+                <a mat-button color="primary" href="/user/logout">Log Out</a>
+            </li>        
         </ul>
     </nav>
     <router-outlet></router-outlet>

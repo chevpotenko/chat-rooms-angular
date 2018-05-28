@@ -3,6 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+
 import { SocketService } from './services/socket/socket.service';
 import { DataService } from './services/data/data.service';
 import { SharedService } from './services/shared/shared.service';
@@ -18,7 +25,7 @@ import { PageIndexComponent } from './components/page-index/page-index.component
 import { SignupComponent } from './components/user/signup/signup.component';
 
 @NgModule({
-    declarations: [
+    declarations: [        
         AppComponent,
         ChatComponent,
         SigninComponent,
@@ -26,6 +33,12 @@ import { SignupComponent } from './components/user/signup/signup.component';
         SignupComponent
     ],
     imports: [
+        MatIconModule,
+        MatListModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatInputModule,
         BrowserModule,
         FormsModule,
         AppRoutingModule,

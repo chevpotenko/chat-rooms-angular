@@ -1,51 +1,80 @@
 <div class="content">
   <div class="content-row">
     <div class="column rooms">
-        <h3>Rooms</h3>
+        <mat-toolbar>
+            <h3>Rooms</h3>
+        </mat-toolbar>
         <div *ngIf="sharedData.isLogin" class="room-control">
-            <input type="text"
-                    class="room-newitem"
-                    placeholder="Name"
-                    #newRoom>
-            <button class="room-add" (click)="addRoom(newRoom.value)">add</button>
+            <mat-form-field class="example-full-width">
+                <input matInput
+                        type="text"
+                        class="room-newitem"
+                        placeholder="Name"
+                        #newRoom>            
+            </mat-form-field>
+            <button mat-raised-button color="accent" class="room-add" (click)="addRoom(newRoom.value)">ADD</button>
         </div>
-        <ul class="rooms-list">
-            <li *ngFor="let item of rooms"
+        <mat-list class="rooms-list">
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let item of rooms"
                 (click)="selectRoom(item.id)">
-                {{item.name}}
-                <span *ngIf="sharedData.isLogin"
-                      (click)="deleteRoom(item.id)"
-                      class="btn-delete">x</span>
-            </li>
-        </ul>
+                <div class="rooms-item">
+                    {{item.name}}
+                    <button color="warn"
+                            mat-icon-button
+                            *ngIf="sharedData.isLogin"
+                            (click)="deleteRoom(item.id)">
+                            <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
     </div>
     <div class="column room">
         <div class="todo">
-            <h3>Todo list</h3>
+            <mat-toolbar>
+                <h3>Todo list</h3>
+            </mat-toolbar>
             <div *ngIf="sharedData.isLogin && currentRoom" class="todo-control">
-                <input type="text"
-                        class="todo-newitem"
-                        placeholder="Name"
-                        #newTask>
-                <button class="todo-add" (click)="addTask(newTask.value)">add</button>
-            </div>
-            <ul *ngIf="currentRoom" class="todo-list">
-                <li *ngFor="let item of currentRoom.todo let number = index">
-                    {{item}}
-                    <span *ngIf="sharedData.isLogin"
-                           (click)="deleteTask(number)"
-                           class="btn-delete">x</span>
-                </li>
-            </ul>
+                <mat-form-field class="example-full-width">
+                    <input matInput
+                            type="text"
+                            class="todo-newitem"
+                            placeholder="Name"
+                            #newTask>
+                </mat-form-field>
+                <button mat-raised-button color="accent" class="todo-add" (click)="addTask(newTask.value)">ADD</button>
+            </div>          
+
+            <mat-list *ngIf="currentRoom" class="todo-list">
+                <mat-divider></mat-divider>
+                <mat-list-item *ngFor="let item of currentRoom.todo let number = index">
+                    <div class="todo-item">
+                        <span>{{item}}</span>                        
+                        <button color="warn"
+                                mat-icon-button
+                                *ngIf="sharedData.isLogin"
+                                (click)="deleteTask(number)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                    <mat-divider></mat-divider>                     
+                </mat-list-item>
+            </mat-list>
         </div>
-        <h3>Chat</h3>                
+        <mat-toolbar>
+            <h3>Chat</h3>
+        </mat-toolbar>
         <app-chat></app-chat>
     </div>
     <div class="column users">
-        <h3>Users</h3>
-        <ul>
-            <li *ngFor="let user of users">{{user.email}}</li>
-        </ul>
+        <mat-toolbar>
+            <h3>Users</h3>
+        </mat-toolbar>
+        <mat-list>
+            <mat-list-item *ngFor="let user of users">{{user.email}}</mat-list-item>
+        </mat-list>
     </div>
   </div>    
 </div>
